@@ -1,12 +1,12 @@
+/* eslint-disable jsx-a11y/alt-text */
 import React from 'react';
 import Slider from "react-slick";
-import sliderfirst from '../../../Images/sliderfirst.jpeg';
-import sliderthird from '../../../Images/sliderthird.jpeg'
-
+import './home.css';
+import sliderthird from '../../../Images/sliderthird.jpeg';
 
 const BannerSection = () => {
     const settings = {
-        dots: false,
+        dots: true,
         infinite: true,
         autoplay: true,
         speed: 200,
@@ -17,21 +17,20 @@ const BannerSection = () => {
 
     return (
         <div className="bannerSecStart">
+            <div className='slidersectiondiv'>
             <Slider {...settings}>
                 <div>
-                    <img src={sliderfirst} />
+                    <img src={sliderthird} alt='sliderfirst'/>
                 </div>
                 <div>
-                <img src={sliderthird} />
+                <img src={sliderthird} alt='sliderthird'/>
                 </div>
                 <div>
-                <img src={sliderfirst} />
-                </div>
-                <div>
-                <img src={sliderthird} />
+                <img src={sliderthird} alt='sliderfirst'/>
                 </div>
 
             </Slider>
+            </div>
         </div>
     );
 }

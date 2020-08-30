@@ -1,0 +1,55 @@
+.slick-list {
+    overflow: hidden;
+}
+.slick-list, .slick-slider, .slick-track {
+    position: relative;
+    display: block;
+}
+.slick-slide {
+    float: left;
+    height: 100%;
+    /* min-height: 1px; */
+}
+.slick-initialized .slick-slide {
+    display: block;
+}
+.slidersectiondiv img {
+    height: 500px;
+    width: 100%;
+    object-fit: cover;
+}
+.slidersectiondiv .slick-slider {
+    position: relative;
+}
+.slidersectiondiv ul.slick-dots {
+    display: flex !important;
+    margin: 0;
+    position: absolute;
+    bottom: 9%;
+}
+.slidersectiondiv ul.slick-dots li{
+    list-style: none;
+}
+.slidersectiondiv ul.slick-dots li button {
+    width: 20px;
+    height: 6px;
+    font-size: 0;
+    padding: 0;
+    border: none;
+    margin: 0 3px;
+    background: #afafaf;
+    cursor: pointer;
+}
+.slidersectiondiv ul.slick-dots li.slick-active button{
+    background-color: #e36d16;
+}
+.slidersectiondiv ul.slick-dots li button:focus {
+    outline: 0;
+}
+.slidersectiondiv .slick-slide.slick-active >div >div:focus {
+    outline: 0;
+}
+ul.subMenu {
+    margin-top: 20px;
+    padding-left: 0;
+}

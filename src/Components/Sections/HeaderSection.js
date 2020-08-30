@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 /* eslint-disable no-duplicate-case */
 /* eslint-disable default-case */
 import React from 'react';
@@ -11,6 +12,7 @@ const HeaderSection = (props) => {
     const history = useHistory();
     const [headerMenu, setHeaderMenu] = React.useState(HEADER_MENU.headerMenu_Options);
     const [activeMenu, setActiveMenu] = React.useState(0);
+    const [subMenu, setSubMenu] = React.useState(false)
 
     const handleActive = (item, idx) => {
         setActiveMenu(idx)
@@ -22,7 +24,7 @@ const HeaderSection = (props) => {
                 history.push('/about')
                 break;
             case "courses":
-                history.push('/')
+                courseClick()
                 break;
             case "services":
                 history.push('/')
@@ -35,7 +37,9 @@ const HeaderSection = (props) => {
                 break;
         }
     }
-
+    const courseClick = () => {
+        setSubMenu(!subMenu);
+    }
     const menuList = headerMenu
     return (
         <div className='headerSecStart'>
@@ -50,7 +54,21 @@ const HeaderSection = (props) => {
                             onClick={() => handleActive(item, idx)}
                             className={'headerSingleMenu' + ' ' + (idx === activeMenu && 'headerActiveMenu')}>
                             {item.label}
-                            <span className="menuarrowIcn"><img src={item.imgsc} className='arrwIcnCls'/></span>
+                            <span className="menuarrowIcn"><img src={item.imgsc} className='arrwIcnCls' /></span>
+                            {/* {subMenu !== true ? (value === 'courses' ?
+                                <ul className='subMenu'>
+                                    <li>abc</li>
+                                </ul> : (null))
+                                :
+                                (null)
+                            } */}
+                            {subMenu !== true ?
+                                <ul className='subMenu'>
+                                    <li>abc</li>
+                                    <li>abc</li>
+                                </ul> : (null)
+                               
+                            }
                         </li>
                     );
                 })}
